@@ -4,10 +4,10 @@ Simple Native node.js promise wrapper.
 
 ## defer(): dfd
 
-```js
-const defer = require('@rainder/defer');
+```ts
+import { defer } from '@rainder/defer';
 
-const dfd = defer();
+const dfd = defer<number>();
 
 dfd.promise.then(...);
 dfd.resolve(...);
@@ -15,11 +15,11 @@ dfd.reject(...);
 ```
 
 ## defer.callback(fn: Function): Promise
-```js
-const defer = require('@rainder/defer');
+```ts
+import { callback } from '@rainder/defer';
 
-defer.callback((cb) => {
-	socket.write(data, cb);
+callback<Socket>((cb) => {
+  socket.write(data, cb);
 }).then(...);
 ```
 
